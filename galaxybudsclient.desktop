@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Galaxy Buds Client
+Comment=Manage your Galaxy Buds.
+Exec=galaxybudsclient
+Icon=galaxybudsclient
+Terminal=false
+Type=Application
+Categories=Audio;Utility;
