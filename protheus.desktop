@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Protheus
+Comment=Protheus
+Exec=/home/dantonbertuol/protheus/smartclient/smartclient -M > /dev/null 2>&1
+Icon=totvs-smartclient.png
+StartupNotify=false
+Terminal=false 
