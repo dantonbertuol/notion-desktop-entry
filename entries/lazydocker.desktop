@@ -1,8 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Lazydocker
-Comment=Manage your docker containers
-Icon=sqldeveloper.png
-Exec=lazydocker
-Terminal=true
-Type=Application
