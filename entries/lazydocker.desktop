@@ -3,6 +3,6 @@ Encoding=UTF-8
 Name=Lazydocker
 Comment=Manage your docker containers
 Icon=sqldeveloper.png
-Exec=lazydocker
+Exec=$HOME/.local/bin/lazydocker
 Terminal=true
 Type=Application
