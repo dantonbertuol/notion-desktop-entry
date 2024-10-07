@@ -126,6 +126,7 @@ PROGRAMS_TO_INSTALL=(
   xorg-dev
   libxnvctrl-dev
   libx11-dev
+  libpq-dev
 )
 
 # External programs download and installation 
