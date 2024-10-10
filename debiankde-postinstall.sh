@@ -127,6 +127,7 @@ PROGRAMS_TO_INSTALL=(
   libxnvctrl-dev
   libx11-dev
   libpq-dev
+  bat
 )
 
 # External programs download and installation 
@@ -174,6 +175,8 @@ install_debs(){
     sudo apt install "$nome_do_programa" -y
   done
 
+  sudo ln -s /usr/bin/batcat /usr/bin/bat
+
 }
 
 # Installating Others Packages
@@ -198,6 +201,7 @@ FLATPAK_TO_INSTALL=(
   com.github.PintaProject.Pinta
   org.kde.CrowTranslate
   org.kde.konsole
+  io.github.zyedidia.micro
 )
 
 # Install Flatpaks
