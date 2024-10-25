@@ -154,7 +154,7 @@ install_debs(){
   wget -c "$URL_GITKRAKEN"    -P "$DOWNLOADS_PATH"
 
   echo -e "${GREEN}[INFO] - PYMODORO${NO_COLOR}"
-  git clone "$URL_PYMODORO"  "$DOWNLOADS_PATH/pymodoro" && cd "$DOWNLOADS_PATH/pymodoro/linux_install" && ./install.sh
+  git clone "$URL_PYMODORO"  "$DOWNLOADS_PATH/pymodoro" && cd "$DOWNLOADS_PATH/pymodoro/install_linux" && ./install.sh
 
   echo -e "${GREEN}[INFO] - LINUX CONFIG${NO_COLOR}"
   git clone "$URL_LINUXCONFIG" "$DOWNLOADS_PATH/linux-config" 
@@ -240,11 +240,11 @@ config_rclone(){
 
 konsole_config(){
   # cd "$DOWNLOADS_PATH/linux-config" && cp -r konsole/flatpak/* $HOME/.var/app/org.kde.konsole/data/konsole/
-  cd "$DOWNLOADS_PATH/linux-config" && cp -r konsole/deb/* $HOME/.local/share/konsole/
+  cd "$DOWNLOADS_PATH/linux-config" && git checkout kubuntu && cp -r konsole/deb/* $HOME/.local/share/konsole/
 }
 
 colors_config(){
-  cd "$DOWNLOADS_PATH/linux-config" && cp -r colors/* $HOME/.local/share/color-schemes
+  cd "$DOWNLOADS_PATH/linux-config" && git checkout kubuntu && cp -r colors/* $HOME/.local/share/color-schemes
 }
 
 icons_config(){
