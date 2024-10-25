@@ -1,13 +1,13 @@
 #!/usr/bin/bash
 #
-# debiankde-postinstall.sh - Install and configure softwares in Debian KDE
+# kubuntu-postinstall.sh - Install and configure softwares in Kubuntu
 #
 # Autor:         dantonbertuol
 #
 # ------------------------------------------------------------------------ #
 #
 # How to Use?
-#   $ ./debiankde-postinstall.sh
+#   $ ./kubuntu-postinstall.sh
 #
 # ----------------------------- VARIABLES ----------------------------- #
 
@@ -72,7 +72,7 @@ add_repository(){
   fi
 
   if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep "http://apt.insync.io/"; then
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C && sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C && sudo add-apt-repository "deb http://apt.insync.io/debian $DISTRO_CODENAME non-free contrib"
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C && sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C && sudo add-apt-repository "deb http://apt.insync.io/ubuntu $DISTRO_CODENAME non-free contrib"
   else
     echo -e "${YELLOW}[REPOSITORY EXISTS] - InSync${NO_COLOR}"
   fi
@@ -128,6 +128,7 @@ PROGRAMS_TO_INSTALL=(
   libx11-dev
   libpq-dev
   bat
+  ttf-mscorefonts-installer
 )
 
 # External programs download and installation 
@@ -200,7 +201,6 @@ FLATPAK_TO_INSTALL=(
   com.jgraph.drawio.desktop
   com.github.PintaProject.Pinta
   org.kde.CrowTranslate
-  org.kde.konsole
   io.github.zyedidia.micro
 )
 
@@ -239,7 +239,7 @@ config_rclone(){
 }
 
 konsole_config(){
-  cd "$DOWNLOADS_PATH/linux-config" && cp -r konsole/flatpak/* $HOME/.var/app/org.kde.konsole/data/konsole/
+  # cd "$DOWNLOADS_PATH/linux-config" && cp -r konsole/flatpak/* $HOME/.var/app/org.kde.konsole/data/konsole/
   cd "$DOWNLOADS_PATH/linux-config" && cp -r konsole/deb/* $HOME/.local/share/konsole/
 }
 
@@ -289,6 +289,5 @@ echo -e "${GREEN}[NEXT]${RED}
 - Configurar atalhos personalizados
 - Configurar o InSync
 - Montar automaticamente partição de Backup
-- Instalar fontes microsoft: https://packages.debian.org/bookworm/all/ttf-mscorefonts-installer/download
 - Vibrant-linux https://github.com/libvibrant/libvibrant?tab=readme-ov-file#building
 ${NO_COLOR}"
