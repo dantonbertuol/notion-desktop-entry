@@ -129,6 +129,7 @@ PROGRAMS_TO_INSTALL=(
   libpq-dev
   bat
   ttf-mscorefonts-installer
+  evince
 )
 
 # External programs download and installation 
@@ -202,6 +203,7 @@ FLATPAK_TO_INSTALL=(
   com.github.PintaProject.Pinta
   org.kde.CrowTranslate
   io.github.zyedidia.micro
+  com.simplenote.Simplenote
 )
 
 # Install Flatpaks
@@ -244,6 +246,7 @@ konsole_config(){
 }
 
 colors_config(){
+  mkdir -p $HOME/.local/share/color-schemes
   cd "$DOWNLOADS_PATH/linux-config" && git checkout kubuntu && cp -r colors/* $HOME/.local/share/color-schemes
 }
 
