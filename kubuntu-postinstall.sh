@@ -188,6 +188,8 @@ install_others(){
 
   curl -fsSL https://get.docker.com | bash && sudo groupadd docker && sudo usermod -aG docker $USER && newgrp docker
 
+  curl https://getmic.ro | bash && sudo mv micro /usr/local/bin/
+
   curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
   sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -202,7 +204,6 @@ FLATPAK_TO_INSTALL=(
   com.jgraph.drawio.desktop
   com.github.PintaProject.Pinta
   org.kde.CrowTranslate
-  io.github.zyedidia.micro
   com.simplenote.Simplenote
 )
 
