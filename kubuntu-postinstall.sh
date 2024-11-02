@@ -130,6 +130,7 @@ PROGRAMS_TO_INSTALL=(
   bat
   ttf-mscorefonts-installer
   evince
+  htop
 )
 
 # External programs download and installation 
