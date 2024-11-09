@@ -131,6 +131,7 @@ PROGRAMS_TO_INSTALL=(
   ttf-mscorefonts-installer
   evince
   htop
+  solaar
 )
 
 # External programs download and installation 
