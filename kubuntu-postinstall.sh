@@ -292,7 +292,7 @@ install_others
 echo -e "${GREEN}[INFO] - Script finalizado, instalação concluída! :)${NO_COLOR}"
 
 echo -e "${GREEN}[NEXT]${RED}
-- Instalar nerd fonts (JetBrainsMono Nerd Font) e Ubuntu Fonts
+- Instalar nerd fonts (JetBrainsMono Nerd Font), Ubuntu Fonts, Monaco e Maple Font
 - Instalar dbeaver-ee
 - Configurar rclone
 - Configurar o Konsole - Aplicar colors e profile
