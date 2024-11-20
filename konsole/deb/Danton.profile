@@ -2,7 +2,7 @@
 AntiAliasFonts=true
 BoldIntense=false
 ColorScheme=Orchis
-Font=JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+Font=Maple Mono,10.3,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 LineSpacing=2
 UseFontLineChararacters=false
 
@@ -14,6 +14,6 @@ Command=/bin/zsh
 Name=Danton
 Parent=FALLBACK/
 TerminalCenter=false
-TerminalColumns=80
+TerminalColumns=90
 TerminalMargin=1
 TerminalRows=20
