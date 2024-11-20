@@ -262,6 +262,13 @@ scripts(){
   cd "$DOWNLOADS_PATH/linux-config" && git checkout commons && cp -r scripts/* $HOME/Documents/scripts
 }
 
+install_homebrew(){
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo >> $HOME/.zshrc
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.zshrc
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+}
+
 
 # -------------------------------Execution----------------------------------------- #
 
@@ -278,6 +285,7 @@ konsole_config
 colors_config
 icons_config
 scripts
+install_homebrew
 install_others
 # Finish
 
