@@ -304,4 +304,6 @@ echo -e "${GREEN}[NEXT]${RED}
 - Configurar o InSync
 - Montar automaticamente partição de Backup
 - Vibrant-linux https://github.com/libvibrant/libvibrant?tab=readme-ov-file#building
+- Configurar tema do micro editor, criando a pasta $HOME/.config/micro/colorschemes e colando o arquivo dentro.
+- Ao abrir o micro, basta pressionar CTRL+E e inserir o comando 'set colorscheme catppuccin-macchiato-transparent'
 ${NO_COLOR}"
