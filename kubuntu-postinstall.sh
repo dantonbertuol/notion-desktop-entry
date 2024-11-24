@@ -132,6 +132,7 @@ PROGRAMS_TO_INSTALL=(
   evince
   htop
   solaar
+  fd-find
 )
 
 # External programs download and installation 
@@ -191,6 +192,10 @@ install_others(){
   curl -fsSL https://get.docker.com | bash && sudo groupadd docker && sudo usermod -aG docker $USER && newgrp docker
 
   curl https://getmic.ro | bash && sudo mv micro /usr/local/bin/
+
+  wget https://github.com/kaplanelad/shellfirm/releases/download/v0.2.10/shellfirm-v0.2.10-x86_64-linux.tar.xz -P $DOWNLOADS_PATH \
+  && tar -xvf $DOWNLOADS_PATH/shellfirm-v0.2.10-x86_64-linux.tar.xz -C $DOWNLOADS_PATH \
+  && sudo mv $DOWNLOADS_PATH/shellfirm-v0.2.10-x86_64-linux/shellfirm /usr/local/bin/
 
   curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
@@ -264,9 +269,21 @@ scripts(){
 
 install_homebrew(){
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo >> $HOME/.zshrc
-  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.zshrc
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+}
+
+micro_theme(){
+  mkdir -p $HOME/.config/micro/colorschemes
+  cd "$DOWNLOADS_PATH/linux-config" && git checkout kubuntu && cp -r micro/* $HOME/.config/micro/colorschemes
+}
+
+configure_zsh(){
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+  git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+  curl https://raw.githubusercontent.com/kaplanelad/shellfirm/main/shell-plugins/shellfirm.plugin.oh-my-zsh.zsh --create-dirs -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/shellfirm/shellfirm.plugin.zsh
+  cd "$DOWNLOADS_PATH/linux-config" && git checkout kubuntu && cp -r zsh/* $HOME
 }
 
 
@@ -280,6 +297,7 @@ install_debs
 install_flatpaks
 # # config_rclone
 system_clean
+micro_theme
 desktop_entries
 konsole_config
 colors_config
@@ -304,6 +322,5 @@ echo -e "${GREEN}[NEXT]${RED}
 - Configurar o InSync
 - Montar automaticamente partição de Backup
 - Vibrant-linux https://github.com/libvibrant/libvibrant?tab=readme-ov-file#building
-- Configurar tema do micro editor, criando a pasta $HOME/.config/micro/colorschemes e colando o arquivo dentro.
 - Ao abrir o micro, basta pressionar CTRL+E e inserir o comando 'set colorscheme catppuccin-macchiato-transparent'
 ${NO_COLOR}"
