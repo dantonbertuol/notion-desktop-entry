@@ -2,7 +2,7 @@
 AntiAliasFonts=true
 BoldIntense=false
 ColorScheme=Orchis
-Font=Maple Mono NF,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+Font=Maple Mono NF,10,-1,5,500,0,0,0,0,0,0,0,0,0,0,1,Medium
 LineSpacing=2
 UseFontLineChararacters=false
 
