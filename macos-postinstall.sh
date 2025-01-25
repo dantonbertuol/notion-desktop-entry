@@ -52,6 +52,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # Configurar o iTerm2
 # Instalar tema e plugins do Oh My ZSH
 # Ao abrir o micro, basta pressionar CTRL+E e inserir o comando 'set colorscheme catppuccin-macchiato-transparent'
+# Adicionar VSCode no PATH: no vscode pressionar CMD+SHIFT+P e executar 'Shell Command: Install 'code' command in PATH'
 
 # Configure Oh My Zsh Plugins and Themes
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
